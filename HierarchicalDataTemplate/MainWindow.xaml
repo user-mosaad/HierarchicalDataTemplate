@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HierarchicalDataTemplate"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="HierarchicalDataTemplate in WPF" Height="450" Width="800">
+    
+    <Grid Margin="10">
+        <TreeView Name="trvMenu">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type local:MenuItem}" ItemsSource="{Binding Path=Items}">
+                    <TextBlock Text="{Binding Path=Title}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
+    
 </Window>
